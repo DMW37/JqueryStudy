@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        .one{
+            width: 200px;
+            height: 140px;
+            margin: 20px;
+            background: red;
+            border: #000 1px solid;
+            float: left;
+            font-size: 17px;
+            font-family: Roman;
+        }
+        div,span{
+            width: 140px;
+            height: 140px;
+            margin: 20px;
+            background: #9999cc;
+            border: #000 1px solid;
+            float: left;
+            font: 17px Roman;
+        }
+        div .mini{
+            width: 40px;
+            height: 40px;
+            background: #cc66FF;
+            border: #000 1px solid;
+            font: 12px Roman;
+        }
+        div .mini01{
+            width: 40px;
+            height: 40px;
+            background: #cc66FF;
+            border: #000 1px solid;
+            font: 12px Roman;
+        }
+        /*待用的样式*/
+        .second{
+            width: 30px;
+            height: 30px;
+            margin: 20px;
+            background: yellow;
+            border: pink 3px dotted;
+            float: left;
+            font: 22px Roman;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="保存" class="mini" name="ok">
+<input type="button" value="采用属性增加样式(改变id=one的样式)" id="b1">
+<input type="button" value="addClass" id="b2">
+<input type="button" value="removeClass" id="b3">
+<input type="button" value="切换样式" id="b4">
+<input type="button" value="通过css()获得id为one背景颜色" id="b5">
+<input type="button" value="通过css()设置id为one背景颜色为绿色" id="b6">
+<h1>有一种奇迹叫做坚持</h1>
+<h2>自信源自于实力</h2>
+<div id="one">
+    id为one的div
+</div>
+<div id="two" class="mini">
+    id为two class是mini的div
+    <div class="mini">class是mini</div>
+</div>
+<div class="one">
+    class是one的div
+    <div class="mini">class是mini</div>
+    <div class="mini">class是mini</div>
+</div>
+<div class="one">
+    class是one的div
+    <div class="mini01">class是mini01</div>
+    <div class="mini">class是mini</div>
+</div>
+<span class="spanone">class是spanone的span</span>
+</body>
+</html>

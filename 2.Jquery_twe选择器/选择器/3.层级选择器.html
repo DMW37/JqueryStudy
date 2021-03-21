@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        div,span{
+            width: 180px;
+            height: 180px;
+            margin: 20px;
+            background: #9999cc;
+            border: #000 1px solid;
+            float: left;
+            font-size: 17px;
+            font-family: Roman;
+        }
+        div .mini{
+            width: 50px;
+            height: 50px;
+            background: #cc66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family: Roman;
+        }
+        div .mini01{
+            width: 50px;
+            height: 50px;
+            background: #cc66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family: Roman;
+        }
+    </style>
+</head>
+<script>
+    $(function () {
+        /*改变<body>内的所有<div>的背景色为红色*/
+        $("#b1").click(function () {
+            /*后代选择器*/
+            $("body div").css("background-color","red")
+        })
+        /*改变<body>内子<div>的背景色为红色*/
+        $("#b2").click(function () {
+            /*子选择器*/
+            $("body>div").css("background-color","red");
+        })
+    })
+</script>
+<body>
+<!--
+1.层级选择器：
+        后代选择器 body div 表示body中的div都有效
+        子代选择器 body>div 表示body中的儿div有效
+-->
+<input type="button" value="保存" class="mini" name="ok">
+<input type="button" value="改变<body>内所有的<div>的背景色为红色" id="b1">
+<input type="button" value="改变<body>内子<div>的背景色为红色" id="b2">
+<h1>有一种奇迹叫做坚持</h1>
+<h2>自信源自于努力</h2>
+<div id="one">
+    id为one的div
+</div>
+<div id="twe" class="mini">
+    id为twe的div class是mini
+    <div class="mini">div内的div，其class为mini</div>
+</div>
+<div class="one">
+    class是one的div
+    <div class="mini">class是mini</div>
+    <div class="mini">class是mini</div>
+</div>
+<div class="one">
+    class是one
+    <div class="mini01">class是mini01</div>
+    <div class="mini">class是mini</div>
+</div>
+<span class="spanone">
+    span
+</span>
+</body>
+</html>

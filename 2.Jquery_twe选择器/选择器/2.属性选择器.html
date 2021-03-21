@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性过滤选择器</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        div, span {
+            width: 180px;
+            height: 180px;
+            margin: 20px;
+            background: #9999cc;
+            border: #000 1px solid;
+            float: left;
+            font-size: 17px;
+            font-family: Roman;
+        }
+
+        div.mini {
+            width: 50px;
+            height: 50px;
+            background: #cc66FF;
+            border: #000000 1px solid;
+            font-size: 12px;
+            font-family: Roman;
+        }
+
+        div.mini01 {
+            width: 50px;
+            height: 50px;
+            background: #cc66FF;
+            border: #000000 1px solid;
+            font-size: 12px;
+            font-family: Roman;
+        }
+
+        div.visible {
+            display: none;
+        }
+    </style>
+
+</head>
+<script>
+    $(function () {
+        /*含有title的div元素背景色为红色*/
+        $("#b1").click(function () {
+            /*根据属性名称找*/
+            $("div[title]").css("background-color", "red");
+        })
+        /*title属性的值等于test的div元素背景色为红色*/
+        $("#b2").click(function () {
+            $("div[title='test']").css("background-color", "red");
+        })
+        /*属性title值不为test的div元素(没有title属性的也将被选中)背景色为红色*/
+        $("#b3").click(function () {
+            $("div[title!='test']").css("background-color", "red");
+        })
+        /*属性title值以te开始的div元素背景色为红色*/
+        $("#b4").click(function () {
+        $("div[title ^='te']").css("background-color","red");
+        })
+        /*属性title值以est结束的div元素背景色为红色*/
+        $("#b5").click(function () {
+            $("div[title $='est']").css("background-color","red");
+        })
+        /*属性title值，含有es的div元素背景色为红色*/
+        $("#b6").click(function (){
+            $("div[title *='es']").css("background","red");
+        })
+        /*选取有属性id的div元素，然后在结果中选取title值含有es的div背景色为红色*/
+        $("#b7").click(function () {
+            $("div[id][title ^='te']").css({"background":"red"})
+        })
+    })
+</script>
+<body>
+<!--
+1.属性选择器：
+       选中属性[] 属性为=？ 属性!=不为？ 属性以什么开头^ 属性以什么结尾$ 属性中含有什么*
+-->
+<input type="button" value="保存" class="mini" name="ok" class="mini">
+<input type="button" value="含有属性title的div元素背景色为红色" id="b1">
+<input type="button" value="属性title值等于test的div元素背景色为红色" id="b2">
+<input type="button" value="属性title不等于test的div元素(没有title属性的也将被选中)背景色为红色" id="b3">
+<input type="button" value="属性title值以te开始的div元素背景色为红色" id="b4">
+<input type="button" value="属性提title以est结束的div原酸背景色为红色" id="b5">
+<input type="button" value="属性title值含有es的div元素背景色为红色" id="b6">
+<input type="button" value="选取有属性id的div元素，然后在结果中选取title值含有es的div背景色为红色" id="b7">
+<div id="one">
+    id为one div
+</div>
+<div id="twe" class="mini" title="test">
+    id为twe class是mini div title="test"
+    <div class="mini">class为mini</div>
+</div>
+<div class="visible">
+    class 是visible
+    <div class="mini">class是mini</div>
+    <div class="mini">class是mini</div>
+</div>
+<div class="one" title="test02">
+    class是one title是test02
+    <div class="mini01">class是mini01</div>
+    <div class="mini" style="margin-top: 0px">class是mini</div>
+</div>
+<div class="visible">
+    这是隐藏的
+</div>
+<div class="one"></div>
+<div id="mover">动画</div>
+<input type="text" value="zhang" id="username" name="username">
+</body>
+</html>

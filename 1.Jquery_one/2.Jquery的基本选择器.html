@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<body>
+<!--
+        1.基本选择器的分类：
+            1.1标签选择器（元素选择器）
+                *语法: $("html标签名") 获得所有匹配标签的元素
+            1.2id选择器
+                *语法: $("#id的属性值") 获得于指定id属性值匹配的元素
+            1.3类选择器
+                *语法: $(".class的属性值") 获得与指定的class属性值
+            1.4并集选择器
+                *语法: $("选择器1,选择器2,选择器3...") 获得多个选择器选中的元素
+-->
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<!--控制上面的三个div-->
+<div class="div4">div4...</div>
+
+<form action="">
+    姓名：<input type="text">
+    密码: <input type="password" value="123456">
+    兴趣爱好：<input type="checkbox" value="篮球"> 蓝球
+    <input type="checkbox" value="干饭"> 干饭
+    自我介绍：<textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="button" value="注册">
+</form>
+</body>
+<script>
+    /*原生操作*/
+    let divs = document.getElementsByTagName("div");
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].innerHTML ="aaaa";
+    }
+    /*JQ操作，标签选择器*/
+    let $divs =$("div");
+    $divs.html("ccc");
+
+    /*使用class选择器来控制div4标签*/
+    /*原生操作*/
+    let div4 = document.getElementsByClassName("div4");
+    /*JQ操作*/
+    let $div4 = $(".div4");
+
+    /*并集选择器*/
+    let fi = $("form input");
+    alert(fi[3].value);
+
+    </script>
+</html>

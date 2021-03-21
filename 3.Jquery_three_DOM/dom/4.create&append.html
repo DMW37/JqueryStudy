@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        div, span {
+            width: 140px;
+            height: 140px;
+            margin: 20px;
+            background: #9999cc;
+            border: #000 1px solid;
+            float: left;
+            font-size: 17px;
+            font-family: Roman;
+        }
+
+        div .mini {
+            width: 30px;
+            height: 30px;
+            background: #cc66FF;
+            border: #000 1px solid;
+            font: 12px Roman;
+        }
+
+        div .visible {
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            /*将反恐放置到city的后面*/
+            $("#b1").click(function () {
+                //$("#city").append($("#fk"))
+                //$("#cq").after($("#fk"));
+            })
+            /*将反恐防止到city的罪前面*/
+            $("#b2").click(function () {
+               $("#city").appendTo($("#fk"))
+            })
+            /*将反恐插入到天津的后面*/
+            /*将反恐防止到city的罪前面*/
+            $("#b3").click(function () {
+                $("tj").append($("#fk"))
+            })
+            /*将反恐插入到天津的前面*/
+
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="将反恐放置到city的后面" id="b1">
+<input type="button" value="将反恐防止到city的罪前面" id="b2">
+<input type="button" value="将反恐插入到天津的后面" id="b3">
+<input type="button" value="将反恐插入到天津的前面" id="b4">
+<ul id="city">
+    <li id="bj" name="beijing">北京</li>
+    <li id="tj" name="tianjin">天津</li>
+    <li id="cq" name="chongqing">重庆</li>
+</ul>
+<ul id="love">
+    <li id="fk" name="fankong">反恐</li>
+    <li id="xj" name="xingji">星际</li>
+</ul>
+<div id="fool">Hello1</div>
+</body>
+</html>

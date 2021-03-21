@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .a{
+            background: green;
+            overflow: hidden;
+            /*可以继承子元素高度*/
+        }
+        .a1{
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+            float: left;
+        }
+        .b{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+        }
+        .c{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            clear: both;/*清除浮动*/
+        }
+    </style>
+</head>
+<body>
+<!--怎样让div浮动起来和清除浮动？-->
+<div class="a">
+    <div class="a1"></div>
+</div>
+<div class="b"></div>
+<div class="c"></div>
+</body>
+</html>

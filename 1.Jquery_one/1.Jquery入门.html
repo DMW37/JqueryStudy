@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<body>
+<!--
+    1.JQuery的快速入门案例
+        1.1 导入Jquery的相关文件到项目的js目录下
+            一般为文件名为jquery-xxx.min.js
+        1.2 在我们需要使用Jquery的地方导入这个js文件
+        1.3 编写js代码
+        1.4 JQ 和 JS的相互转换
+        jq ->js jq[索引] 或则jq.get(索引)
+        js ->jq $(js)
+-->
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+</body>
+<script>
+    /*Jquery代码编写*/
+    let div1 = $("#div1");
+    let div2 = document.getElementById("div2");
+    alert(div1.html());//弹出div1
+    /*如何将js对象div2转化为jq对象*/
+    alert($(div2).html());
+    /*注意：
+    *1.$是我们Jquery种的一个万能的函数
+    *2.#div 表示 id选择器
+    *3.html() 是我们Jquery中获取获取标签体内容的方法
+    *  类似于js中的innerHtml
+    * */
+    /*需求：需要将div1和div2里面的内容*/
+    //原生操作
+    div2.innerHTML = 'aaa';
+    /*div1.innerHTML = 'ccc';
+    JS和JQ中的方法是不能通用的,此处注解的内容就没效果*/
+    //JQ操作
+    div1.html("ccc");
+</script>
+</html>

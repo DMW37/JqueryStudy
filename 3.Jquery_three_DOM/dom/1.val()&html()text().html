@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    /*JQ代码*/
+    /*$(function () {
+        //获取myinput的value值
+        let val = $("#myinput").val();
+        alert(val);
+        //获取mydiv的标签体内容
+        var myHtml = $("#mydiv").html();
+        alert(myHtml);
+        //获取mydiv文本内容
+        var myText =$("#mydiv").text();
+        alert(myText);
+    })*/
+    /*JS代码*/
+    window.onload = function () {
+        let myinput = document.getElementById("myinput");
+        let value = myinput.value;
+        alert(value);
+        let mydiv = document.getElementById("mydiv");
+        let inn = mydiv.innerHTML;
+        alert(inn);
+        let innerText = mydiv.innerText;
+        alert(innerText);
+    }
+</script>
+<body>
+<!--
+如何获取和设置表单中的value值（val()）？ 如何获取标的标签体(html())？如何获取标签中的文本体(text())？
+-->
+<input type="text" id="myinput" name="username" value="张三">
+<br>
+<div id="mydiv"><p><a href="#">标题标签</a>卡噶</p></div>
+</body>
+</html>

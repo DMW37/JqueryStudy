@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单过滤选择器</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        div, span {
+            width: 180px;
+            height: 180px;
+            margin: 20px;
+            background: #9999cc;
+            border: #000 1px solid;
+            float: left;
+            font-size: 17px;
+            font-family: Roman;
+        }
+
+        div .mini {
+            width: 50px;
+            height: 50px;
+            background: #9999cc;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family: Roman;
+        }
+
+        div .mini01 {
+            width: 50px;
+            height: 50px;
+            background: #cc66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family: Roman;
+        }
+
+        #job {
+            margin: 20px;
+        }
+
+        #edu {
+            margin-top: -70px;
+        }
+    </style>
+</head>
+<script>
+    $(function () {
+        /*利用Jquery对象的val()方法改变表单内可用<input>元素的值*/
+        $("#b1").click(function () {
+            $("input[type='text']:enabled").val("并");
+        })
+        /*利用Jquery对象的val()方法改变表单内不可用<input>元素的值*/
+        $("#b2").click(function () {
+            alert(111)
+            let val = $("input[type='text']:disabled").val("逆行有");
+            alert(val)
+        })
+        /*利用Jquery对象的length属性获取复选框选中的个数*/
+        $("#b3").click(function () {
+            let length = $("input[type='checkbox']:checked").length;
+            alert(length)
+        })
+        /*利用Jquery对象的length属性获取下拉框选中的个数*/
+        $("#b4").click(function () {
+            let length1 = $("option:selected").length;
+            alert(length1)
+        })
+    })
+</script>
+<body>
+<input type="button " value="保存" class="mini" name="ok">
+<input type="button" value="利用Jquery对象的val()方法改变表单内可用<input>元素的值" id="b1">
+<input type="button" value="利用Jquery对象的val()方法改变表单内不可用<input>元素的值" id="b2">
+<input type="button" value="利用Jquery对象的length属性获取复选框选中的个数" id="b3">
+<input type="button" value="利用Jquery对象的length属性获取下拉框选中的个数" id="b4">
+<hr>
+<input type="text" value="不可用值1" disabled="disabled">
+<input type="text" value="可用值1">
+<input type="text" value="不可用值2" disabled="disabled">
+<input type="text" value="可用值2">
+
+<hr>
+<input type="checkbox" name="items" value="美容">美容
+<input type="checkbox" name="items" value="IT">IT
+<input type="checkbox" name="items" value="金融">金融
+<input type="checkbox" name="items" value="管理">管理
+<hr>
+<input type="radio" name="sex" value="男">男
+<input type="radio" name="sex" value="女">女
+<hr>
+<select name="job" id="job" multiple="multiple" size="4">
+    <option value="">初级程序员</option>
+    <option value="">中级程序员</option>
+    <option value="">高级程序员</option>
+    <option value="">系统分析师</option>
+</select>
+
+<select name="edu" id="edu">
+    <option value="">本科</option>
+    <option value="">专科</option>
+    <option value="">硕士</option>
+    <option value="">博世</option>
+</select>
+<hr>
+<div id="two" class="mini">
+    id是two class是mini的div
+    <div class="mini"> class是mini的div中的div</div>
+</div>
+<div class="one">
+    class是one的div
+    <div class="mini">class是mini的div中的div</div>
+    <div class="mini">class是mini的div中的div</div>
+</div>
+<div class="one">
+    class是one的div
+    <div class="mini01">class是mini01的div中的div</div>
+    <div class="mini">class是mini的div中的div</div>
+</div>
+</body>
+</html>
